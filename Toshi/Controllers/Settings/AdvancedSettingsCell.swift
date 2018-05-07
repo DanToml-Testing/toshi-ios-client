@@ -15,7 +15,7 @@
 
 import UIKit
 
-final class WalletCell: BasicTableViewCell {
+final class AdvancedSettingsCell: BasicTableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
 
@@ -29,14 +29,13 @@ final class WalletCell: BasicTableViewCell {
         contentView.addSubview(titleTextField)
         contentView.addSubview(valueLabel)
 
-        titleTextField.top(to: contentView, offset: BasicTableViewCell.verticalMargin)
+        titleTextField.centerY(to: contentView)
         titleTextField.left(to: contentView, offset: BasicTableViewCell.horizontalMargin)
-        titleTextField.bottom(to: contentView, offset: -BasicTableViewCell.verticalMargin)
-        titleTextField.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
 
+        valueLabel.centerY(to: contentView)
         valueLabel.leftToRight(of: titleTextField, offset: BasicTableViewCell.horizontalMargin)
-        valueLabel.top(to: contentView, offset: BasicTableViewCell.verticalMargin)
         valueLabel.right(to: contentView, offset: -BasicTableViewCell.horizontalMargin)
-        valueLabel.bottom(to: contentView, offset: -BasicTableViewCell.verticalMargin)
+        valueLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        valueLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
     }
 }

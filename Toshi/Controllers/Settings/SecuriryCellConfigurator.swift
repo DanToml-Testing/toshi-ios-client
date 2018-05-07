@@ -15,9 +15,9 @@
 
 import UIKit
 
-final class WalletCellConfigurator: CellConfigurator {
-    func configureCell(_ cell: WalletCell, withSelectedWalletName walletName: String) {
-        cell.titleTextField.text = Localized.settings_header_wallet
-        cell.valueLabel.text = walletName
+final class SecuritySettingsCellConfigurator: CellConfigurator {
+    func configureCell(_ cell: SecuritySettingsCell, withTitle title: String, checked: Bool) {
+        cell.titleTextField.text = title
+        cell.checkmarkView.checked = checked
     }
 }

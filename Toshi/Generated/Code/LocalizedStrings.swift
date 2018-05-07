@@ -185,16 +185,17 @@ enum LocalizedKey: String, StringCaseListable {
     search_for_name_or_username,
     search_people_placeholder,
     settings_advanced_network_change_warning,
-    settings_cell_advanced,
+    settings_cell_about,
     settings_cell_local_currency,
+    settings_cell_network,
     settings_cell_passphrase,
-    settings_cell_qr,
     settings_cell_signout,
+    settings_cell_wallet,
+    settings_header_advanced,
+    settings_header_other,
     settings_header_profile,
     settings_header_security,
     settings_header_security_text,
-    settings_header_settings,
-    settings_header_wallet,
     settings_navigation_title,
     settings_network_title,
     settings_signout_action_delete,
@@ -837,20 +838,29 @@ struct Localized {
     /// `en`: "Changing the network allows you to test services without the risk of losing money. It’s recommended not to change these settings unless you are a developer\n\n"
     static let settings_advanced_network_change_warning = LocalizedKey.settings_advanced_network_change_warning.currentValue
     
-    /// `en`: "Advanced"
-    static let settings_cell_advanced = LocalizedKey.settings_cell_advanced.currentValue
+    /// `en`: "About Toshi"
+    static let settings_cell_about = LocalizedKey.settings_cell_about.currentValue
     
     /// `en`: "Local currency"
     static let settings_cell_local_currency = LocalizedKey.settings_cell_local_currency.currentValue
     
+    /// `en`: "Active Network"
+    static let settings_cell_network = LocalizedKey.settings_cell_network.currentValue
+    
     /// `en`: "Store passphrase"
     static let settings_cell_passphrase = LocalizedKey.settings_cell_passphrase.currentValue
     
-    /// `en`: "My QR Code"
-    static let settings_cell_qr = LocalizedKey.settings_cell_qr.currentValue
-    
     /// `en`: "Sign out"
     static let settings_cell_signout = LocalizedKey.settings_cell_signout.currentValue
+    
+    /// `en`: "Active Wallet"
+    static let settings_cell_wallet = LocalizedKey.settings_cell_wallet.currentValue
+    
+    /// `en`: "Advanced"
+    static let settings_header_advanced = LocalizedKey.settings_header_advanced.currentValue
+    
+    /// `en`: "Other"
+    static let settings_header_other = LocalizedKey.settings_header_other.currentValue
     
     /// `en`: "Profile"
     static let settings_header_profile = LocalizedKey.settings_header_profile.currentValue
@@ -862,12 +872,6 @@ struct Localized {
     static let settings_header_security_text = LocalizedKey.settings_header_security_text.currentValue
     
     /// `en`: "Settings"
-    static let settings_header_settings = LocalizedKey.settings_header_settings.currentValue
-    
-    /// `en`: "Wallet"
-    static let settings_header_wallet = LocalizedKey.settings_header_wallet.currentValue
-    
-    /// `en`: "Me"
     static let settings_navigation_title = LocalizedKey.settings_navigation_title.currentValue
     
     /// `en`: "Network"

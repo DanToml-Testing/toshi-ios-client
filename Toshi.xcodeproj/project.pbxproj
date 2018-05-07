@@ -1012,6 +1012,7 @@
 		C1128E2CDD482DB9BE1BF5A3 /* libPods-CocoaPods-Distribution.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E67E3F2BFB7B0171BF61B30 /* libPods-CocoaPods-Distribution.a */; };
 		C904ABD5324415F45702AB48 /* libPods-CocoaPods-Distribution.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2446336EA68730ACD1CE100D /* libPods-CocoaPods-Distribution.a */; };
 		D197B006BD046DC2E6B46351 /* String+nsRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B695935159A20363BBF9 /* String+nsRange.swift */; };
+		D197B02250886AD34FFCD093 /* SecuriryCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BDE56C0F64F372F9B728 /* SecuriryCellConfigurator.swift */; };
 		D197B0665A1116F4115B0919 /* CGFloat+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B38148DE3442BA5485CD /* CGFloat+Additions.swift */; };
 		D197B06FE122DE9A80081DAC /* SofaInitialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B84A2DC8436AF31CAF6A /* SofaInitialResponse.swift */; };
 		D197B0896EF91C2CCF4C5D78 /* SofaIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BCEB0A1FF98FE303EDBD /* SofaIdentifierTests.swift */; };
@@ -1027,6 +1028,7 @@
 		D197B14BC2EF3AC740372100 /* AcceptDeclineButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B18261400D5175ADC6C7 /* AcceptDeclineButtonsView.swift */; };
 		D197B1573E01CAB1B093EBB9 /* ChatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B9998A8A84CC265C1772 /* ChatButton.swift */; };
 		D197B1871B41C8874AA3E988 /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B2177A1D6D0ED2186291 /* ReceiptView.swift */; };
+		D197B1C630CA3DF2DB6098D4 /* AdvancedSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B98288FE649F32A97484 /* AdvancedSettingsCell.swift */; };
 		D197B1D03E10A442C0C921FC /* PaymentAddressInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B2862798843980AFD2BA /* PaymentAddressInputView.swift */; };
 		D197B1DF02A3FA1A8E60AD65 /* EthereumConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B7EC7030BE4C4508AACD /* EthereumConverterTests.swift */; };
 		D197B1E784F2176023D0F635 /* YapDatabaseViewConnection+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B494213B9F6EC5413D88 /* YapDatabaseViewConnection+Additions.swift */; };
@@ -1042,8 +1044,10 @@
 		D197B22FB4CEE1C4761BCEB7 /* SofaInitialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B84A2DC8436AF31CAF6A /* SofaInitialResponse.swift */; };
 		D197B2859F1B1E4BE895E760 /* transactionSkeleton.json in Resources */ = {isa = PBXBuildFile; fileRef = D197BFC186F1EEBDC8FD45B1 /* transactionSkeleton.json */; };
 		D197B2A45E12329713413EAE /* createUnsignedTransaction.json in Resources */ = {isa = PBXBuildFile; fileRef = D197BB03F2BFF88371C66F25 /* createUnsignedTransaction.json */; };
+		D197B2F8BBC65BBE035EAAB7 /* WalletPickerCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B84E18E8E9ECE1363BD7 /* WalletPickerCellConfigurator.swift */; };
 		D197B329C25288ECA41EC3C8 /* SofaWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B6AD4DEFD836C0ECA908 /* SofaWrapperTests.swift */; };
 		D197B329D1F28B5F7868DE4D /* ProfileEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BDBBB0DE754639B7005B /* ProfileEditController.swift */; };
+		D197B33C3446C7761E1AC0D7 /* AdvancedCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B1076AEC207F90F17A39 /* AdvancedCellConfigurator.swift */; };
 		D197B35BF9744D2F37972747 /* EthereumAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B33D03FC3E507BE3B3C1 /* EthereumAPIClientTests.swift */; };
 		D197B3681093A4FBE3144B3C /* getHighBalance.json in Resources */ = {isa = PBXBuildFile; fileRef = D197B538677D9E831BA9AB3F /* getHighBalance.json */; };
 		D197B3754333741EC9165E36 /* SignInScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BFD427B9507272D11B76 /* SignInScreenUITests.swift */; };
@@ -1059,6 +1063,8 @@
 		D197B404D7DAE06ADBAA992D /* SofaStatusTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BAAFB2F184D062E0B675 /* SofaStatusTest.swift */; };
 		D197B42062A97879E4A74C97 /* DynamicFontTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B96A4C74DB7DDE9F3FA7 /* DynamicFontTextField.swift */; };
 		D197B42A7E9E693AC60C9299 /* SofaPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BCAEADF108A249EC0D89 /* SofaPaymentRequest.swift */; };
+		D197B43B4E85FC1B7C0F0FA0 /* WalletPickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B3059454E4673A47BEA9 /* WalletPickerDataSource.swift */; };
+		D197B4469404DC92BBA646EA /* WalletPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B6AFCFEA44BE3186620A /* WalletPickerCell.swift */; };
 		D197B47D98009339295B1A5C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B19EAB3E25CAEDCC5C86 /* ProfileViewController.swift */; };
 		D197B4827BED8F3A5BAB5CB8 /* SofaStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BAEBA12E2D8F04A0F846 /* SofaStatus.swift */; };
 		D197B4900630D4EB555BA7BC /* CGFloat+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B38148DE3442BA5485CD /* CGFloat+Additions.swift */; };
@@ -1072,14 +1078,17 @@
 		D197B582F2C455C9183EBB46 /* AvatarTitleSubtitleDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B268A788889FB0269322 /* AvatarTitleSubtitleDescriptionCell.swift */; };
 		D197B590332E9C0D001FFDA8 /* AvatarTitleSubtitleDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B268A788889FB0269322 /* AvatarTitleSubtitleDescriptionCell.swift */; };
 		D197B590E4C59A08CB4AD88A /* SofaWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BC2A4D26A2F961C2E33E /* SofaWrapper.swift */; };
+		D197B5ACB369F9600248D789 /* WalletPickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B3059454E4673A47BEA9 /* WalletPickerDataSource.swift */; };
 		D197B5CAB2C21A43C3A447C9 /* CollectibleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BD45C8052C1437BE2F91 /* CollectibleCell.swift */; };
 		D197B5D286D19CDAC90DCF45 /* PaymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BCE7202958A0BA1A896E /* PaymentRouter.swift */; };
+		D197B5D2EA3A34DABC4F695B /* SecuritySettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BD01984F4B27472C48E1 /* SecuritySettingsCell.swift */; };
 		D197B6174378B26EDA051439 /* SofaCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B5AD370809E7D2EB3631 /* SofaCommand.swift */; };
 		D197B61F77E710DF67E4FBD2 /* UINotificationName+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B669EF87D9D6642E12BA /* UINotificationName+Additions.swift */; };
 		D197B6317CD8A691D3AD1E07 /* queriedDappsResults.json in Resources */ = {isa = PBXBuildFile; fileRef = D197B7A3DB3AF2756FA31B92 /* queriedDappsResults.json */; };
 		D197B64168F50DA7F7EAC669 /* IDAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B5CF9A6EFA209E1D74B5 /* IDAPIClientTests.swift */; };
 		D197B65533BDB0BB9C8BB4CA /* AvatarTitleDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B705981C3AED3EFB40DC /* AvatarTitleDescriptionCell.swift */; };
 		D197B683AEBC4A7B8F0FF197 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BB02C1FCC52F69B81E12 /* ReachabilityManager.swift */; };
+		D197B686C2E830C5B26F0460 /* WalletPickerCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B84E18E8E9ECE1363BD7 /* WalletPickerCellConfigurator.swift */; };
 		D197B68FAD277206C35FA934 /* PaymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BCE7202958A0BA1A896E /* PaymentRouter.swift */; };
 		D197B6A1519FAB078F9174F4 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BB4FC8D408B73FE253E5 /* BlurView.swift */; };
 		D197B6B964C6C99549F7B078 /* SofaInitialRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BC051BEE35DB98BD053F /* SofaInitialRequest.swift */; };
@@ -1090,31 +1099,35 @@
 		D197B6DFB8BD6A1EBEEF4BA5 /* DoubleAvatarTitleSubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B79A895911F06FFC781C /* DoubleAvatarTitleSubtitleCell.swift */; };
 		D197B6EB6C3157476638ABE6 /* SofaMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B3F77566E161C5CAB467 /* SofaMessage.swift */; };
 		D197B6F01E52F247B8982310 /* String+nsRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BBE7ED942198265AED9B /* String+nsRangeTests.swift */; };
+		D197B738AB3FA606CDE242AA /* WalletPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B6AFCFEA44BE3186620A /* WalletPickerCell.swift */; };
 		D197B74275EBC3A229F0D4D9 /* timestamp.json in Resources */ = {isa = PBXBuildFile; fileRef = D197B5835BCEB0D7A2DA6967 /* timestamp.json */; };
 		D197B74EC4D752C175A731F5 /* PaymentConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BB6208925B43A58D5483 /* PaymentConfirmationViewController.swift */; };
 		D197B75D832DE95150C18016 /* CGFloat+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B38148DE3442BA5485CD /* CGFloat+Additions.swift */; };
 		D197B76039E4B9C45F980CCF /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BB02C1FCC52F69B81E12 /* ReachabilityManager.swift */; };
 		D197B76575751DB2103547AB /* ChatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B9998A8A84CC265C1772 /* ChatButton.swift */; };
+		D197B77B720B50FA6684790C /* WalletPickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B3059454E4673A47BEA9 /* WalletPickerDataSource.swift */; };
 		D197B78149B1C7A84A108096 /* DynamicFontTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B96A4C74DB7DDE9F3FA7 /* DynamicFontTextField.swift */; };
 		D197B7826883306A72319E51 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B19EAB3E25CAEDCC5C86 /* ProfileViewController.swift */; };
 		D197B79D8C2B5092A70A98C8 /* CollectibleCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BB0B32CD87852479976D /* CollectibleCellConfigurator.swift */; };
 		D197B79DACE43441E9C5B27A /* dappsFrontPage.json in Resources */ = {isa = PBXBuildFile; fileRef = D197B4857989DB703783427F /* dappsFrontPage.json */; };
 		D197B79EB8798DAA0647C3D7 /* ReceiptLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B65C63A525B97898821D /* ReceiptLineView.swift */; };
+		D197B7C936973311D89C34D6 /* AdvancedSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B98288FE649F32A97484 /* AdvancedSettingsCell.swift */; };
 		D197B7D1989BDB45F12EFC7B /* CollectibleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BD45C8052C1437BE2F91 /* CollectibleCell.swift */; };
+		D197B7D343CB9D6C73B2E3E8 /* AdvancedCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B1076AEC207F90F17A39 /* AdvancedCellConfigurator.swift */; };
 		D197B80A67FA2271BE1C9621 /* YapDatabaseViewConnection+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B494213B9F6EC5413D88 /* YapDatabaseViewConnection+Additions.swift */; };
 		D197B83F0A9396CF2E7628D5 /* ActiveNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B6E47F5F979A8C154E9A /* ActiveNetworkView.swift */; };
-		D197B840082F4E52E13CFB27 /* WalletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B0A7F774E003C6206306 /* WalletCell.swift */; };
 		D197B844B1C67758B2A0E9F2 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BFD8FAC1FBE64984D60C /* StatusCell.swift */; };
 		D197B86C1B96EB2B5778EB52 /* PaymentAddressInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B2862798843980AFD2BA /* PaymentAddressInputView.swift */; };
+		D197B8957CDABF84AA96B326 /* WalletPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BD106F09C3572F77482A /* WalletPickerController.swift */; };
 		D197B8A34615A01EE8440F40 /* CollectibleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BD45C8052C1437BE2F91 /* CollectibleCell.swift */; };
 		D197B8B87F4A0DCA761DE9D6 /* retrieveUser.json in Resources */ = {isa = PBXBuildFile; fileRef = D197B8E798FCD39B97824BBA /* retrieveUser.json */; };
 		D197B9197610B41F1C03A246 /* PaymentManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B187200FF7B2AF51E78E /* PaymentManagerTests.swift */; };
 		D197B93806978360C8100D50 /* score.json in Resources */ = {isa = PBXBuildFile; fileRef = D197BB0710786F9F642F4318 /* score.json */; };
 		D197B93C624C3E8D1F43B232 /* getCurrencies.json in Resources */ = {isa = PBXBuildFile; fileRef = D197B175422C9602CE00CF65 /* getCurrencies.json */; };
 		D197B95C65F5A93A5012EA5B /* SofaWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BC2A4D26A2F961C2E33E /* SofaWrapper.swift */; };
+		D197B9687E8D2D1E7F7D1242 /* WalletPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BD106F09C3572F77482A /* WalletPickerController.swift */; };
 		D197B968EE5E2CE52CC92F1D /* YapDatabaseViewConnection+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B494213B9F6EC5413D88 /* YapDatabaseViewConnection+Additions.swift */; };
 		D197B99E1E1E4A6020699D14 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B19EAB3E25CAEDCC5C86 /* ProfileViewController.swift */; };
-		D197B9AD0FDDC8658C2057E4 /* WalletCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BC0F6BE8A382CAFDF378 /* WalletCellConfigurator.swift */; };
 		D197B9B70F913CC695358027 /* SofaInitialRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BC051BEE35DB98BD053F /* SofaInitialRequest.swift */; };
 		D197B9D47550D571260DB146 /* OfflineAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BD136059B5C238CB3425 /* OfflineAlertView.swift */; };
 		D197B9D646686EF7FE2D78B8 /* UINotificationName+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B669EF87D9D6642E12BA /* UINotificationName+Additions.swift */; };
@@ -1123,37 +1136,41 @@
 		D197B9EF12AE7FEC28E43542 /* ToshiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B54B1A4AD5DB747C55BF /* ToshiError.swift */; };
 		D197BA1239ADB74721CCCB92 /* AvatarTitleDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B705981C3AED3EFB40DC /* AvatarTitleDescriptionCell.swift */; };
 		D197BA1FF0BF6C862DE5FA1C /* ReceiptLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B65C63A525B97898821D /* ReceiptLineView.swift */; };
+		D197BA3DF815555D157AD3C6 /* SecuritySettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BD01984F4B27472C48E1 /* SecuritySettingsCell.swift */; };
 		D197BA433CB02EDCAF1DE0AF /* AvatarTitleDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B705981C3AED3EFB40DC /* AvatarTitleDescriptionCell.swift */; };
 		D197BA6E5DC09E84D524D1A2 /* getBalance.json in Resources */ = {isa = PBXBuildFile; fileRef = D197B003D276C7AD76B6A223 /* getBalance.json */; };
 		D197BA86BA0E50A255A50CD6 /* getCollectibles.json in Resources */ = {isa = PBXBuildFile; fileRef = D197B04967D7C10C90539A78 /* getCollectibles.json */; };
 		D197BA8AAC5425D906767D63 /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B2177A1D6D0ED2186291 /* ReceiptView.swift */; };
 		D197BA94CB5436F7605925FD /* SofaPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BC4FF536D4350C725251 /* SofaPayment.swift */; };
-		D197BABFE9A054839635DC7F /* WalletCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BC0F6BE8A382CAFDF378 /* WalletCellConfigurator.swift */; };
+		D197BA9928ED3F3AE1F250A8 /* WalletPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B6AFCFEA44BE3186620A /* WalletPickerCell.swift */; };
 		D197BADA32392E95EA354C18 /* ProfileEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BDBBB0DE754639B7005B /* ProfileEditController.swift */; };
 		D197BADE7B88BF0539D8646B /* SofaStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BAEBA12E2D8F04A0F846 /* SofaStatus.swift */; };
 		D197BB101DFDC98E98C6B79E /* ReceiptLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B65C63A525B97898821D /* ReceiptLineView.swift */; };
 		D197BB1D4FCB90485B49C583 /* CollectibleCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BB0B32CD87852479976D /* CollectibleCellConfigurator.swift */; };
 		D197BB5265BB1DA3032B68AA /* ExchangeRateAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BDA113837D7DCFE1A66F /* ExchangeRateAPIClientTests.swift */; };
+		D197BB6D33BE7F58F44BB6D6 /* SecuritySettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BD01984F4B27472C48E1 /* SecuritySettingsCell.swift */; };
 		D197BBAFEA21AFA96FF5EB30 /* DoubleAvatarTitleSubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B79A895911F06FFC781C /* DoubleAvatarTitleSubtitleCell.swift */; };
 		D197BBDB018E3C6EE3CA3B1B /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BFD8FAC1FBE64984D60C /* StatusCell.swift */; };
 		D197BBDFE322BAFD2D036076 /* OfflineAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BD136059B5C238CB3425 /* OfflineAlertView.swift */; };
 		D197BBE91E49D7B9DCD1B17D /* String+nsRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B695935159A20363BBF9 /* String+nsRange.swift */; };
+		D197BBEAA8A430E965ABB770 /* SecuriryCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BDE56C0F64F372F9B728 /* SecuriryCellConfigurator.swift */; };
 		D197BC32BA4D952C0E815F18 /* ActiveNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B6E47F5F979A8C154E9A /* ActiveNetworkView.swift */; };
 		D197BC3B60A96D12312C48B7 /* SofaInitialRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BC051BEE35DB98BD053F /* SofaInitialRequest.swift */; };
+		D197BC459BB125B36468E4E6 /* WalletPickerCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B84E18E8E9ECE1363BD7 /* WalletPickerCellConfigurator.swift */; };
 		D197BC5E2A33FB5B00A55942 /* String+nsRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B695935159A20363BBF9 /* String+nsRange.swift */; };
+		D197BC79B4DA62489011039C /* WalletPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BD106F09C3572F77482A /* WalletPickerController.swift */; };
 		D197BC84B3106A1289746D7F /* getLowBalance.json in Resources */ = {isa = PBXBuildFile; fileRef = D197B5AFF3B06E154E864519 /* getLowBalance.json */; };
+		D197BC9169BFDA6D52D5C037 /* AdvancedCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B1076AEC207F90F17A39 /* AdvancedCellConfigurator.swift */; };
 		D197BCD0784E03D9B662C7F8 /* CGFloat+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B38148DE3442BA5485CD /* CGFloat+Additions.swift */; };
 		D197BCE9E48328BF70480029 /* DirectoryAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BAAC781426CEFFF5DBA0 /* DirectoryAPIClientTests.swift */; };
 		D197BD08F09124F7B83238F9 /* ToshiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B54B1A4AD5DB747C55BF /* ToshiError.swift */; };
 		D197BD13B1D92FA792BFA14C /* searchGroupProfiles.json in Resources */ = {isa = PBXBuildFile; fileRef = D197B4894C9651424B00058F /* searchGroupProfiles.json */; };
 		D197BD532AA776C66EDCCDEB /* SofaPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BC4FF536D4350C725251 /* SofaPayment.swift */; };
-		D197BDC51BB03D61E46B4C73 /* WalletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B0A7F774E003C6206306 /* WalletCell.swift */; };
+		D197BD864BCD1EEF4E02D46E /* SecuriryCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BDE56C0F64F372F9B728 /* SecuriryCellConfigurator.swift */; };
 		D197BDCFFA301DDA7C290BBB /* DoubleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B52C452CE2763BB4976A /* DoubleImageView.swift */; };
 		D197BDD5424805C3D7F2163A /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BB02C1FCC52F69B81E12 /* ReachabilityManager.swift */; };
 		D197BDD8CE8D0AB349317A4E /* getExactBalance.json in Resources */ = {isa = PBXBuildFile; fileRef = D197B2A6B46B72AEC83603E8 /* getExactBalance.json */; };
 		D197BDE13FECEEDB7511144E /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = D197B12C40488CB1523BB212 /* user.json */; };
-		D197BE01E5F25D865056C2B4 /* WalletCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BC0F6BE8A382CAFDF378 /* WalletCellConfigurator.swift */; };
-		D197BE47384CBF019943C495 /* WalletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B0A7F774E003C6206306 /* WalletCell.swift */; };
 		D197BE6B912D6D35E6A75E21 /* AvatarTitleSubtitleDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B268A788889FB0269322 /* AvatarTitleSubtitleDescriptionCell.swift */; };
 		D197BE83E68416D3FA0AE9BF /* ProfileEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BDBBB0DE754639B7005B /* ProfileEditController.swift */; };
 		D197BEB3E29871D88732E16D /* searchUserProfiles.json in Resources */ = {isa = PBXBuildFile; fileRef = D197B3009D05FF7826296820 /* searchUserProfiles.json */; };
@@ -1164,6 +1181,7 @@
 		D197BF10EA25C4BEEC42204E /* OfflineAlertDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B827D378D5A6CE7A52D0 /* OfflineAlertDisplaying.swift */; };
 		D197BF264BEDC2A9EABFA2FA /* SofaInitialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B84A2DC8436AF31CAF6A /* SofaInitialResponse.swift */; };
 		D197BF2D11D80236CC181D5D /* PaymentConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BB6208925B43A58D5483 /* PaymentConfirmationViewController.swift */; };
+		D197BF2FC5B85C1EB346E05D /* AdvancedSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B98288FE649F32A97484 /* AdvancedSettingsCell.swift */; };
 		D197BF84F829C3200A677BE0 /* SofaPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BCAEADF108A249EC0D89 /* SofaPaymentRequest.swift */; };
 		D197BFB3C85D103063F9C87E /* ToshiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B54B1A4AD5DB747C55BF /* ToshiError.swift */; };
 		D197BFEFB82271BBE1152E9E /* SofaMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B3F77566E161C5CAB467 /* SofaMessage.swift */; };
@@ -1634,9 +1652,9 @@
 		D197B04967D7C10C90539A78 /* getCollectibles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getCollectibles.json; sourceTree = "<group>"; };
 		D197B079DCC1F4C2498E14C7 /* getRate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getRate.json; sourceTree = "<group>"; };
 		D197B08FD40246411DCC612F /* HowDoesItWorkScreenRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowDoesItWorkScreenRobot.swift; sourceTree = "<group>"; };
-		D197B0A7F774E003C6206306 /* WalletCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletCell.swift; sourceTree = "<group>"; };
 		D197B0B3F554858E7196CD70 /* ToshiErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToshiErrorTests.swift; sourceTree = "<group>"; };
 		D197B0B8C43D9AEF28A5170A /* IDAPIClientQuickSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDAPIClientQuickSpecs.swift; sourceTree = "<group>"; };
+		D197B1076AEC207F90F17A39 /* AdvancedCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedCellConfigurator.swift; sourceTree = "<group>"; };
 		D197B12C40488CB1523BB212 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		D197B1451DB719E76A084950 /* timestamp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timestamp.json; sourceTree = "<group>"; };
 		D197B175422C9602CE00CF65 /* getCurrencies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getCurrencies.json; sourceTree = "<group>"; };
@@ -1651,6 +1669,7 @@
 		D197B29F0030A48233E69AD9 /* nonExistingUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nonExistingUser.json; sourceTree = "<group>"; };
 		D197B2A6B46B72AEC83603E8 /* getExactBalance.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getExactBalance.json; sourceTree = "<group>"; };
 		D197B3009D05FF7826296820 /* searchUserProfiles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searchUserProfiles.json; sourceTree = "<group>"; };
+		D197B3059454E4673A47BEA9 /* WalletPickerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletPickerDataSource.swift; sourceTree = "<group>"; };
 		D197B33D03FC3E507BE3B3C1 /* EthereumAPIClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthereumAPIClientTests.swift; sourceTree = "<group>"; };
 		D197B38148DE3442BA5485CD /* CGFloat+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Additions.swift"; sourceTree = "<group>"; };
 		D197B3910BD80CB8C19AC36F /* getACollectible.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getACollectible.json; sourceTree = "<group>"; };
@@ -1673,6 +1692,7 @@
 		D197B669EF87D9D6642E12BA /* UINotificationName+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINotificationName+Additions.swift"; sourceTree = "<group>"; };
 		D197B695935159A20363BBF9 /* String+nsRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+nsRange.swift"; sourceTree = "<group>"; };
 		D197B6AD4DEFD836C0ECA908 /* SofaWrapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SofaWrapperTests.swift; sourceTree = "<group>"; };
+		D197B6AFCFEA44BE3186620A /* WalletPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletPickerCell.swift; sourceTree = "<group>"; };
 		D197B6D88C3CCC7B7A890925 /* RatingsClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingsClientTests.swift; sourceTree = "<group>"; };
 		D197B6E47F5F979A8C154E9A /* ActiveNetworkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveNetworkView.swift; sourceTree = "<group>"; };
 		D197B705981C3AED3EFB40DC /* AvatarTitleDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarTitleDescriptionCell.swift; sourceTree = "<group>"; };
@@ -1681,8 +1701,10 @@
 		D197B7EC7030BE4C4508AACD /* EthereumConverterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthereumConverterTests.swift; sourceTree = "<group>"; };
 		D197B827D378D5A6CE7A52D0 /* OfflineAlertDisplaying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineAlertDisplaying.swift; sourceTree = "<group>"; };
 		D197B84A2DC8436AF31CAF6A /* SofaInitialResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SofaInitialResponse.swift; sourceTree = "<group>"; };
+		D197B84E18E8E9ECE1363BD7 /* WalletPickerCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletPickerCellConfigurator.swift; sourceTree = "<group>"; };
 		D197B8E798FCD39B97824BBA /* retrieveUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = retrieveUser.json; sourceTree = "<group>"; };
 		D197B96A4C74DB7DDE9F3FA7 /* DynamicFontTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicFontTextField.swift; sourceTree = "<group>"; };
+		D197B98288FE649F32A97484 /* AdvancedSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsCell.swift; sourceTree = "<group>"; };
 		D197B9998A8A84CC265C1772 /* ChatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatButton.swift; sourceTree = "<group>"; };
 		D197BAAC781426CEFFF5DBA0 /* DirectoryAPIClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryAPIClientTests.swift; sourceTree = "<group>"; };
 		D197BAAFB2F184D062E0B675 /* SofaStatusTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SofaStatusTest.swift; sourceTree = "<group>"; };
@@ -1697,18 +1719,20 @@
 		D197BB6208925B43A58D5483 /* PaymentConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentConfirmationViewController.swift; sourceTree = "<group>"; };
 		D197BBE7ED942198265AED9B /* String+nsRangeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+nsRangeTests.swift"; sourceTree = "<group>"; };
 		D197BC051BEE35DB98BD053F /* SofaInitialRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SofaInitialRequest.swift; sourceTree = "<group>"; };
-		D197BC0F6BE8A382CAFDF378 /* WalletCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletCellConfigurator.swift; sourceTree = "<group>"; };
 		D197BC2A4D26A2F961C2E33E /* SofaWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SofaWrapper.swift; sourceTree = "<group>"; };
 		D197BC4FF536D4350C725251 /* SofaPayment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SofaPayment.swift; sourceTree = "<group>"; };
 		D197BCAEADF108A249EC0D89 /* SofaPaymentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SofaPaymentRequest.swift; sourceTree = "<group>"; };
 		D197BCE7202958A0BA1A896E /* PaymentRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentRouter.swift; sourceTree = "<group>"; };
 		D197BCEB0A1FF98FE303EDBD /* SofaIdentifierTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SofaIdentifierTests.swift; sourceTree = "<group>"; };
+		D197BD01984F4B27472C48E1 /* SecuritySettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecuritySettingsCell.swift; sourceTree = "<group>"; };
+		D197BD106F09C3572F77482A /* WalletPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletPickerController.swift; sourceTree = "<group>"; };
 		D197BD136059B5C238CB3425 /* OfflineAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineAlertView.swift; sourceTree = "<group>"; };
 		D197BD33506B4EB09BA577F3 /* PaymentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		D197BD45C8052C1437BE2F91 /* CollectibleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectibleCell.swift; sourceTree = "<group>"; };
 		D197BD90B16E4CB6A71D4C6C /* NSDecimalNumber+AdditionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDecimalNumber+AdditionsTests.swift"; sourceTree = "<group>"; };
 		D197BDA113837D7DCFE1A66F /* ExchangeRateAPIClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRateAPIClientTests.swift; sourceTree = "<group>"; };
 		D197BDBBB0DE754639B7005B /* ProfileEditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditController.swift; sourceTree = "<group>"; };
+		D197BDE56C0F64F372F9B728 /* SecuriryCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecuriryCellConfigurator.swift; sourceTree = "<group>"; };
 		D197BFC186F1EEBDC8FD45B1 /* transactionSkeleton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transactionSkeleton.json; sourceTree = "<group>"; };
 		D197BFD427B9507272D11B76 /* SignInScreenUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenUITests.swift; sourceTree = "<group>"; };
 		D197BFD8FAC1FBE64984D60C /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
@@ -2662,6 +2686,10 @@
 				E1A95D541E6EF092002762DA /* SettingsController.swift */,
 				9FAACCD61E310C1100FB871D /* SettingsNavigationController.swift */,
 				D197B78AD8AD2C51FA55926C /* Wallet */,
+				D197B98288FE649F32A97484 /* AdvancedSettingsCell.swift */,
+				D197B1076AEC207F90F17A39 /* AdvancedCellConfigurator.swift */,
+				D197BDE56C0F64F372F9B728 /* SecuriryCellConfigurator.swift */,
+				D197BD01984F4B27472C48E1 /* SecuritySettingsCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -2933,8 +2961,10 @@
 		D197B78AD8AD2C51FA55926C /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
-				D197BC0F6BE8A382CAFDF378 /* WalletCellConfigurator.swift */,
-				D197B0A7F774E003C6206306 /* WalletCell.swift */,
+				D197BD106F09C3572F77482A /* WalletPickerController.swift */,
+				D197B3059454E4673A47BEA9 /* WalletPickerDataSource.swift */,
+				D197B6AFCFEA44BE3186620A /* WalletPickerCell.swift */,
+				D197B84E18E8E9ECE1363BD7 /* WalletPickerCellConfigurator.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -4094,8 +4124,14 @@
 				D197BA1239ADB74721CCCB92 /* AvatarTitleDescriptionCell.swift in Sources */,
 				D197BB1D4FCB90485B49C583 /* CollectibleCellConfigurator.swift in Sources */,
 				D197B7D1989BDB45F12EFC7B /* CollectibleCell.swift in Sources */,
-				D197BABFE9A054839635DC7F /* WalletCellConfigurator.swift in Sources */,
-				D197BE47384CBF019943C495 /* WalletCell.swift in Sources */,
+				D197B8957CDABF84AA96B326 /* WalletPickerController.swift in Sources */,
+				D197B5ACB369F9600248D789 /* WalletPickerDataSource.swift in Sources */,
+				D197B738AB3FA606CDE242AA /* WalletPickerCell.swift in Sources */,
+				D197B2F8BBC65BBE035EAAB7 /* WalletPickerCellConfigurator.swift in Sources */,
+				D197BF2FC5B85C1EB346E05D /* AdvancedSettingsCell.swift in Sources */,
+				D197B7D343CB9D6C73B2E3E8 /* AdvancedCellConfigurator.swift in Sources */,
+				D197BBEAA8A430E965ABB770 /* SecuriryCellConfigurator.swift in Sources */,
+				D197B5D2EA3A34DABC4F695B /* SecuritySettingsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4406,8 +4442,14 @@
 				D197BA433CB02EDCAF1DE0AF /* AvatarTitleDescriptionCell.swift in Sources */,
 				D197BF0C0B5BD93C5100B473 /* CollectibleCellConfigurator.swift in Sources */,
 				D197B8A34615A01EE8440F40 /* CollectibleCell.swift in Sources */,
-				D197B9AD0FDDC8658C2057E4 /* WalletCellConfigurator.swift in Sources */,
-				D197B840082F4E52E13CFB27 /* WalletCell.swift in Sources */,
+				D197BC79B4DA62489011039C /* WalletPickerController.swift in Sources */,
+				D197B77B720B50FA6684790C /* WalletPickerDataSource.swift in Sources */,
+				D197BA9928ED3F3AE1F250A8 /* WalletPickerCell.swift in Sources */,
+				D197BC459BB125B36468E4E6 /* WalletPickerCellConfigurator.swift in Sources */,
+				D197B1C630CA3DF2DB6098D4 /* AdvancedSettingsCell.swift in Sources */,
+				D197BC9169BFDA6D52D5C037 /* AdvancedCellConfigurator.swift in Sources */,
+				D197BD864BCD1EEF4E02D46E /* SecuriryCellConfigurator.swift in Sources */,
+				D197BB6D33BE7F58F44BB6D6 /* SecuritySettingsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4702,8 +4744,14 @@
 				D197B65533BDB0BB9C8BB4CA /* AvatarTitleDescriptionCell.swift in Sources */,
 				D197B79D8C2B5092A70A98C8 /* CollectibleCellConfigurator.swift in Sources */,
 				D197B5CAB2C21A43C3A447C9 /* CollectibleCell.swift in Sources */,
-				D197BE01E5F25D865056C2B4 /* WalletCellConfigurator.swift in Sources */,
-				D197BDC51BB03D61E46B4C73 /* WalletCell.swift in Sources */,
+				D197B9687E8D2D1E7F7D1242 /* WalletPickerController.swift in Sources */,
+				D197B43B4E85FC1B7C0F0FA0 /* WalletPickerDataSource.swift in Sources */,
+				D197B4469404DC92BBA646EA /* WalletPickerCell.swift in Sources */,
+				D197B686C2E830C5B26F0460 /* WalletPickerCellConfigurator.swift in Sources */,
+				D197B7C936973311D89C34D6 /* AdvancedSettingsCell.swift in Sources */,
+				D197B33C3446C7761E1AC0D7 /* AdvancedCellConfigurator.swift in Sources */,
+				D197B02250886AD34FFCD093 /* SecuriryCellConfigurator.swift in Sources */,
+				D197BA3DF815555D157AD3C6 /* SecuritySettingsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

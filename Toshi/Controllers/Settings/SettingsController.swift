@@ -22,24 +22,20 @@ class SettingsController: UIViewController {
 
     enum SettingsSection: Int {
         case profile
-        case wallet
         case security
-        case settings
+        case advanced
+        case other
 
         var items: [SettingsItem] {
             switch self {
             case .profile:
                 return [.profile]
-            case .wallet:
-                return [.wallet]
             case .security:
                 return [.security]
-            case .settings:
-                #if DEBUG || TOSHIDEV
-                    return [.localCurrency, .advanced, .signOut]
-                #else
-                    return [.localCurrency, .signOut]
-                #endif
+            case .advanced:
+                return [.wallet, .network]
+            case .other:
+                return [.localCurrency, .about, .signOut]
             }
         }
 
@@ -47,18 +43,18 @@ class SettingsController: UIViewController {
             switch self {
             case .profile:
                 return Localized.settings_header_profile
-            case .wallet:
-                return Localized.settings_header_wallet
             case .security:
                 return Localized.settings_header_security
-            case .settings:
-                return Localized.settings_header_settings
+            case .advanced:
+                return Localized.settings_header_advanced
+            case .other:
+                return Localized.settings_header_other
             }
         }
 
         var footerTitle: String? {
             switch self {
-            case .settings:
+            case .other:
                 return SettingsSection.appVersionString
             default:
                 return nil
@@ -75,7 +71,7 @@ class SettingsController: UIViewController {
     }
 
     enum SettingsItem: Int {
-        case profile, wallet, security, advanced, localCurrency, signOut
+        case profile, security, wallet, network, localCurrency, about, signOut
     }
 
     private var ethereumAPIClient: EthereumAPIClient {
@@ -94,7 +90,7 @@ class SettingsController: UIViewController {
         return Profile.current?.verified ?? false
     }
 
-    private let sections: [SettingsSection] = [.profile, .wallet, .security, .settings]
+    private let sections: [SettingsSection] = [.profile, .security, .advanced, .other]
 
     private lazy var tableView: UITableView = {
 
@@ -108,16 +104,11 @@ class SettingsController: UIViewController {
         view.preservesSuperviewLayoutMargins = true
 
         view.register(UITableViewCell.self)
-        view.register(WalletCell.self)
+        view.register(AdvancedSettingsCell.self)
+        view.register(SecuritySettingsCell.self)
 
         return view
     }()
-
-    private var balance: NSDecimalNumber? {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
 
     static func instantiateFromNib() -> SettingsController {
         guard let settingsController = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController() as? SettingsController else { fatalError("Storyboard named 'Settings' should be provided in application") }
@@ -146,48 +137,20 @@ class SettingsController: UIViewController {
         tableView.backgroundColor = Theme.lightGrayBackgroundColor
 
         tableView.registerNib(SettingsProfileCell.self)
-        tableView.registerNib(InputCell.self)
 
         NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: .currentUserUpdated, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleBalanceUpdate(notification:)), name: .ethereumBalanceUpdateNotification, object: nil)
-
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleUpdateLocalCurrency), name: .localCurrencyUpdated, object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         IDAPIClient.shared.updateContact(with: Cereal.shared.address)
-        self.fetchAndUpdateBalance()
 
         preferLargeTitleIfPossible(true)
     }
 
     @objc private func updateUI() {
         self.tableView.reloadData()
-    }
-
-    @objc private func handleUpdateLocalCurrency() {
-        self.balance = self.balance ?? .zero
-    }
-
-    @objc private func handleBalanceUpdate(notification: Notification) {
-        guard notification.name == .ethereumBalanceUpdateNotification, let balance = notification.object as? NSDecimalNumber else { return }
-        self.balance = balance
-    }
-
-    private func fetchAndUpdateBalance() {
-
-        self.ethereumAPIClient.getBalance(cachedBalanceCompletion: { [weak self] cachedBalance, _ in
-            self?.balance = cachedBalance
-        }, fetchedBalanceCompletion: { [weak self] fetchedBalance, error in
-            if let error = error {
-                let alertController = UIAlertController.errorAlert(error as NSError)
-                Navigator.presentModally(alertController)
-            } else {
-                self?.balance = fetchedBalance
-            }
-        })
     }
 
     private func handleSignOut() {
@@ -235,26 +198,6 @@ class SettingsController: UIViewController {
 
         return alert
     }
-
-    private func setupProfileCell(_ cell: UITableViewCell) {
-        guard let cell = cell as? SettingsProfileCell else { return }
-        guard let currentUserProfile = Profile.current else { return }
-        
-        cell.displayNameLabel.text = currentUserProfile.name
-        cell.usernameLabel.text = currentUserProfile.displayUsername
-        
-        guard let avatarPath = currentUserProfile.avatar else { return }
-        AvatarManager.shared.avatar(for: avatarPath) { image, _ in
-            cell.avatarImageView.image = image
-        }
-    }
-
-    private func pushViewController(_ storyboardName: String) {
-        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-        guard let controller = storyboard.instantiateInitialViewController() else { return }
-
-        self.navigationController?.pushViewController(controller, animated: true)
-    }
 }
 
 extension SettingsController: UITableViewDataSource {
@@ -264,30 +207,79 @@ extension SettingsController: UITableViewDataSource {
         var cell: UITableViewCell
 
         let section = sections[indexPath.section]
-        let item = section.items[indexPath.row]
 
-        switch item {
+        switch section {
         case .profile:
-            cell = tableView.dequeue(SettingsProfileCell.self, for: indexPath)
-        case .wallet:
-           cell = setupWalletCell(for: indexPath)
-        default:
-            cell = tableView.dequeue(UITableViewCell.self, for: indexPath)
-            cell.textLabel?.textColor = Theme.darkTextColor
-            cell.textLabel?.font = Theme.preferredRegular()
+            cell = cellForProfileSectionAt(indexPath: indexPath)
+        case .security:
+            cell = cellForSecuritySectionAt(indexPath: indexPath)
+        case .advanced:
+            cell = cellForAdvancedSectionAt(indexPath: indexPath)
+        case .other:
+            cell = cellForOtherSectionAt(indexPath: indexPath)
         }
 
+        cell.isAccessibilityElement = true
+        
+        return cell
+    }
+
+    private func cellForProfileSectionAt(indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeue(SettingsProfileCell.self, for: indexPath)
+        guard let currentUserProfile = Profile.current else { return cell}
+
+        cell.displayNameLabel.text = currentUserProfile.name
+        cell.usernameLabel.text = currentUserProfile.displayUsername
+
+        guard let avatarPath = currentUserProfile.avatar else { return cell }
+        AvatarManager.shared.avatar(for: avatarPath) { image, _ in
+            cell.avatarImageView.image = image
+        }
+
+        return cell
+    }
+
+    private func cellForSecuritySectionAt(indexPath: IndexPath) -> UITableViewCell {
+        let securityCellConfigurator = SecuritySettingsCellConfigurator()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SecuritySettingsCell.reuseIdentifier, for: indexPath)as? SecuritySettingsCell else { return UITableViewCell() }
+
+        securityCellConfigurator.configureCell(cell, withTitle: Localized.settings_cell_passphrase, checked: isAccountSecured)
+
+        return cell
+    }
+
+    private func cellForAdvancedSectionAt(indexPath: IndexPath) -> UITableViewCell {
+        let item = SettingsSection.advanced.items[indexPath.row]
+
+        let walletCellConfigurator = AdvancedSettingsCellConfigurator()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AdvancedSettingsCell.reuseIdentifier, for: indexPath)as? AdvancedSettingsCell else { return UITableViewCell() }
+
         switch item {
-        case .profile:
-            setupProfileCell(cell)
-        case .security:
-            cell.textLabel?.text = Localized.settings_cell_passphrase
-            cell.accessoryType = .disclosureIndicator
+        case .wallet:
+            //TODO: Implement real selected wallet cell name
+            walletCellConfigurator.configureCell(cell, withTitle: Localized.settings_cell_wallet, value: "Wallet 1")
+        case .network:
+            walletCellConfigurator.configureCell(cell, withTitle: Localized.settings_cell_network, value: NetworkSwitcher.shared.activeNetwork.label)
+        default:
+            break
+        }
+
+        return cell
+    }
+
+    private func cellForOtherSectionAt(indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeue(UITableViewCell.self, for: indexPath)
+        cell.textLabel?.textColor = Theme.darkTextColor
+        cell.textLabel?.font = Theme.preferredRegular()
+
+        let item = SettingsSection.other.items[indexPath.row]
+
+        switch item {
         case .localCurrency:
             cell.textLabel?.text = Localized.settings_cell_local_currency
             cell.accessoryType = .disclosureIndicator
-        case .advanced:
-            cell.textLabel?.text = Localized.settings_cell_advanced
+        case .about:
+            cell.textLabel?.text = Localized.settings_cell_about
             cell.accessoryType = .disclosureIndicator
         case .signOut:
             cell.textLabel?.text = Localized.settings_cell_signout
@@ -298,17 +290,6 @@ extension SettingsController: UITableViewDataSource {
         }
 
         cell.isAccessibilityElement = true
-        
-        return cell
-    }
-
-    private func setupWalletCell(for indexPath: IndexPath) -> UITableViewCell {
-        let walletCellConfigurator = WalletCellConfigurator()
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: WalletCell.reuseIdentifier, for: indexPath)as? WalletCell else { return UITableViewCell() }
-
-        //TODO: Change hardcoded string to the actual name of the currently selected wallet
-        walletCellConfigurator.configureCell(cell, withSelectedWalletName: "Wallet 2")
-
         return cell
     }
 
@@ -338,17 +319,19 @@ extension SettingsController: UITableViewDelegate {
         case .profile:
             guard let current = Profile.current else { return }
             let profileVC = ProfileViewController(profile: current, readOnlyMode: false)
-            
+
             self.navigationController?.pushViewController(profileVC, animated: true)
-        case .wallet:
-            print("wallet cell selected")
-            //TODO: Push Wallet selection controller
         case .security:
             self.navigationController?.pushViewController(PassphraseEnableController(), animated: true)
+        case .wallet:
+            self.navigationController?.pushViewController(WalletPickerController(), animated: true)
+        case .network:
+            navigationController?.pushViewController(NetworkSettingsController(), animated: true)
         case .localCurrency:
             self.navigationController?.pushViewController(CurrencyPicker(), animated: true)
-        case .advanced:
-            self.pushViewController("AdvancedSettings")
+        case .about:
+            //TODO: implement about ViewController when design is ready
+            DLog("push about ViewController")
         case .signOut:
             self.handleSignOut()
         }
@@ -390,7 +373,7 @@ extension SettingsController: UITableViewDelegate {
         let sectionItem = sections[section]
 
         switch sectionItem {
-        case .settings:
+        case .other:
             return .defaultCellHeight
         default:
             return SettingsController.footerHeight

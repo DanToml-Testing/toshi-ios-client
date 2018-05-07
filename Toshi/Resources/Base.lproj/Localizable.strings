@@ -95,19 +95,21 @@
 "transaction_error_message" = "Error completing transaction";
 
 /* Settings */
-"settings_navigation_title" = "Me";
+"settings_navigation_title" = "Settings";
 
 "settings_header_profile" = "Profile";
-"settings_header_wallet" = "Wallet";
 "settings_header_security" = "Security";
 "settings_header_security_text" = "Your account is at risk";
-"settings_header_settings" = "Settings";
+"settings_header_advanced" = "Advanced";
+"settings_header_other" = "Other";
 
-"settings_cell_qr" = "My QR Code";
 "settings_cell_passphrase" = "Store passphrase";
-"settings_cell_advanced" = "Advanced";
-"settings_cell_signout" = "Sign out";
+"settings_cell_wallet" = "Active Wallet";
+"settings_cell_network" = "Active Network";
+"settings_cell_passphrase" = "Store passphrase";
+"settings_cell_about" = "About Toshi";
 "settings_cell_local_currency" = "Local currency";
+"settings_cell_signout" = "Sign out";
 
 "settings_signout_error_title" = "No user found!";
 "settings_signout_error_message" = "This is an error. Please report this.";

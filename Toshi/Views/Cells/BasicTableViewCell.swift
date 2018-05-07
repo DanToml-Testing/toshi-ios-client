@@ -43,6 +43,7 @@ class BasicTableViewCell: UITableViewCell {
     static let verticalMargin: CGFloat = .spacingx3
     static let interItemMargin: CGFloat = .mediumInterItemSpacing
     static let largeInterItemMargin: CGFloat = .spacingx3
+    static let hugeInterItemMargin: CGFloat = .spacingx6
     static let imageSize: CGFloat = 48.0
     static let doubleImageSize: CGFloat = 48.0
     static let largeImageSize: CGFloat = 72.0
