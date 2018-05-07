@@ -54,7 +54,7 @@ struct Wallet {
     private(set) var cereal: EtherealCereal
 
     var title: String {
-        return String(format: Localized.wallet_title_format, "\(path)")
+        return String(format: Localized.wallet_title_format, "\(path + 1)")
     }
 
     var address: String {
