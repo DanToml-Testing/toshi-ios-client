@@ -394,7 +394,8 @@ final class EthereumAPIClient {
             let cereal = Cereal.shared
             let path = "/v1/apn/register"
             let address = cereal.address
-            let params = ["registration_id": appDelegate.token, "address": cereal.paymentAddress]
+
+            let params: [String: Any] = ["registration_id": appDelegate.token, "addresses": Wallet.walletsAddresses]
 
             guard let data = try? JSONSerialization.data(withJSONObject: params, options: []), let payloadString = String(data: data, encoding: .utf8) else {
                 completion?(false, "Invalid payload, request could not be executed")

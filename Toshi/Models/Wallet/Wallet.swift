@@ -32,6 +32,10 @@ struct Wallet {
 
     static private(set) var items = [Wallet]()
 
+    static var walletsAddresses: [String] {
+        return items.map { $0.address }
+    }
+
     static var activeWallet: Wallet {
         return items.first(where: { $0.path == activeWalletPath }) ?? Wallet.items.first!
     }
