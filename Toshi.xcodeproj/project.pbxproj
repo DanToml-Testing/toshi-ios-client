@@ -197,6 +197,10 @@
 		2B6BB7A1209FE0EB00AD02B5 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BB7A0209FE0EB00AD02B5 /* Wallet.swift */; };
 		2B6BB7A2209FE0EB00AD02B5 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BB7A0209FE0EB00AD02B5 /* Wallet.swift */; };
 		2B6BB7A3209FE0EB00AD02B5 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BB7A0209FE0EB00AD02B5 /* Wallet.swift */; };
+		2B6BB7A5209FEEA500AD02B5 /* BlockiesSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6BB7A4209FEEA400AD02B5 /* BlockiesSwift.framework */; };
+		2B6BB7A6209FEEA500AD02B5 /* BlockiesSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6BB7A4209FEEA400AD02B5 /* BlockiesSwift.framework */; };
+		2B6BB7A7209FEEA500AD02B5 /* BlockiesSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6BB7A4209FEEA400AD02B5 /* BlockiesSwift.framework */; };
+		2B6BB7A8209FEEE300AD02B5 /* BlockiesSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6BB7A4209FEEA400AD02B5 /* BlockiesSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2B6BFFEF20483DA20083F960 /* DappsTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BFFEE20483DA20083F960 /* DappsTableHeaderView.swift */; };
 		2B6BFFF020483DA20083F960 /* DappsTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BFFEE20483DA20083F960 /* DappsTableHeaderView.swift */; };
 		2B6BFFF120483DA20083F960 /* DappsTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BFFEE20483DA20083F960 /* DappsTableHeaderView.swift */; };
@@ -1221,6 +1225,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2B6BB7A8209FEEE300AD02B5 /* BlockiesSwift.framework in Embed Frameworks */,
 				9FA12BE91E65A151003705F6 /* RevealServer.framework in Embed Frameworks */,
 				9F3FF8321EB36A8E002D0293 /* AwesomeCache.framework in Embed Frameworks */,
 				9F3FF8331EB36A8E002D0293 /* CameraScanner.framework in Embed Frameworks */,
@@ -1324,6 +1329,7 @@
 		2B69E69D202BAA6400E84570 /* CollectibleToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleToken.swift; sourceTree = "<group>"; };
 		2B69E6A1202BCC3600E84570 /* CollectibleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleViewController.swift; sourceTree = "<group>"; };
 		2B6BB7A0209FE0EB00AD02B5 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		2B6BB7A4209FEEA400AD02B5 /* BlockiesSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BlockiesSwift.framework; path = Carthage/Build/iOS/BlockiesSwift.framework; sourceTree = "<group>"; };
 		2B6BFFEE20483DA20083F960 /* DappsTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DappsTableHeaderView.swift; sourceTree = "<group>"; };
 		2B6C18F31FCD431800DE432B /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		2B6C18F71FCD438000DE432B /* NewGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupViewModel.swift; sourceTree = "<group>"; };
@@ -1778,6 +1784,7 @@
 				9FF957881EEEB7BA00DDCBD8 /* CoreImage.framework in Frameworks */,
 				9FF957891EEEB7BA00DDCBD8 /* ImageIO.framework in Frameworks */,
 				9FF9578C1EEEB7BA00DDCBD8 /* AVFoundation.framework in Frameworks */,
+				2B6BB7A7209FEEA500AD02B5 /* BlockiesSwift.framework in Frameworks */,
 				9FF9578D1EEEB7BA00DDCBD8 /* UIKit.framework in Frameworks */,
 				9FF9578E1EEEB7BA00DDCBD8 /* CameraScanner.framework in Frameworks */,
 				9FF957901EEEB7BA00DDCBD8 /* EtherealCereal.framework in Frameworks */,
@@ -1834,6 +1841,7 @@
 				A9202E3E1ED82AFC0036E9B7 /* TinyConstraints.framework in Frameworks */,
 				9F3FF82A1EB36A7F002D0293 /* SweetUIKit.framework in Frameworks */,
 				9F3FF82C1EB36A7F002D0293 /* Teapot.framework in Frameworks */,
+				2B6BB7A5209FEEA500AD02B5 /* BlockiesSwift.framework in Frameworks */,
 				9F3FF8181EB36A7F002D0293 /* Formulaic.framework in Frameworks */,
 				9F3FF8241EB36A7F002D0293 /* PromiseKit.framework in Frameworks */,
 				9F3FF8281EB36A7F002D0293 /* SweetSwift.framework in Frameworks */,
@@ -1858,6 +1866,7 @@
 				A9603F491F4DABDC00BF57B1 /* CoreImage.framework in Frameworks */,
 				A9603F4A1F4DABDC00BF57B1 /* ImageIO.framework in Frameworks */,
 				A9603F4D1F4DABDC00BF57B1 /* AVFoundation.framework in Frameworks */,
+				2B6BB7A6209FEEA500AD02B5 /* BlockiesSwift.framework in Frameworks */,
 				A9603F4E1F4DABDC00BF57B1 /* UIKit.framework in Frameworks */,
 				A9603F4F1F4DABDC00BF57B1 /* CameraScanner.framework in Frameworks */,
 				A9603F501F4DABDC00BF57B1 /* EtherealCereal.framework in Frameworks */,
@@ -1963,6 +1972,7 @@
 				2BAB90C31EC1206B005D98C6 /* MobileCoreServices.framework */,
 				2BAB90B61EC119FC005D98C6 /* libz.tbd */,
 				2BAB90AE1EC11963005D98C6 /* Photos.framework */,
+				2B6BB7A4209FEEA400AD02B5 /* BlockiesSwift.framework */,
 				2BAB90A21EC1194B005D98C6 /* CoreGraphics.framework */,
 				2BAB90A31EC1194B005D98C6 /* CoreImage.framework */,
 				2BAB90A41EC1194B005D98C6 /* ImageIO.framework */,
@@ -3531,6 +3541,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/TinyConstraints.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/BlockiesSwift.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
@@ -3675,6 +3686,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/TinyConstraints.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/BlockiesSwift.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
