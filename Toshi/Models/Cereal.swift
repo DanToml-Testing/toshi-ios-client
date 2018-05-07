@@ -22,7 +22,7 @@ struct Wallet {
     static let walletsNumber: UInt32 = 10
     static var activeWalletPath: UInt32 = 0
 
-    static private(set) var wallets = [Wallet]()
+    static private(set) var items = [Wallet]()
 
     private let mnemonic: BTCMnemonic
 
@@ -37,6 +37,10 @@ struct Wallet {
         return cereal.address
     }
 
+    var isActive: Bool {
+        return address == Wallet.activeWallet.address
+    }
+
     init(path: UInt32, mnemonic: BTCMnemonic) {
         self.path = path
         self.mnemonic = mnemonic
@@ -48,14 +52,14 @@ struct Wallet {
 
     static func generate(mnemonic: BTCMnemonic) {
         for walletPath in 0...Wallet.walletsNumber - 1 {
-            wallets.append(Wallet(path: walletPath, mnemonic: mnemonic))
+            items.append(Wallet(path: walletPath, mnemonic: mnemonic))
         }
 
-        print(wallets)
+        print(items)
     }
 
     static var activeWallet: Wallet {
-        return wallets.first(where: { $0.path == activeWalletPath }) ?? wallets.first!
+        return items.first(where: { $0.path == activeWalletPath }) ?? Wallet.items.first!
     }
 
     private static func walletKeychain(from mnemonic: BTCMnemonic, lastPath: UInt32) -> BTCKeychain {
@@ -78,8 +82,6 @@ class Cereal: NSObject {
     let entropyByteCount = 16
 
     var idCereal: EtherealCereal
-
-    var wallets = [Wallet]()
 
     var walletCereal: EtherealCereal {
         return Wallet.activeWallet.cereal
