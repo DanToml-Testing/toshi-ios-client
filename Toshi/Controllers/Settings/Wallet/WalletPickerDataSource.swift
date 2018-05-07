@@ -19,12 +19,6 @@ final class WalletPickerDataSource: NSObject {
 
     private var tableView: UITableView
 
-    private var indexPathForSelectedWallet: IndexPath? {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-
     init(tableView: UITableView) {
         self.tableView = tableView
 
@@ -59,6 +53,8 @@ extension WalletPickerDataSource: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        indexPathForSelectedWallet = indexPath
+
+        Wallet.items[indexPath.row].activate()
+        tableView.reloadData()
     }
 }

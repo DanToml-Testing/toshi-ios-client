@@ -30,7 +30,8 @@ enum UserDefaultsKey: String, StringCaseListable {
     selectedContact = "Restoration::SelectedContact",
     selectedThreadAddress = "Restoration::SelectedThread",
     tabBarSelectedIndex = "TabBarSelectedIndex",
-    activeNetwork = "ActiveNetwork"
+    activeNetwork = "ActiveNetwork",
+    activeWalletPath = "ActiveWalletPath"
 }
 
 /// A wrapper for NSUserDefaults to facilitate type-safe fetching
@@ -188,6 +189,15 @@ class UserDefaultsWrapper: NSObject {
         }
         set {
             setValue(newValue, for: .activeNetwork)
+        }
+    }
+
+    static var activeWalletPath: Int? {
+        get {
+            return int(for: .activeWalletPath)
+        }
+        set {
+            setValue(newValue, for: .activeWalletPath)
         }
     }
     

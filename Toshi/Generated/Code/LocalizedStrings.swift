@@ -273,6 +273,7 @@ enum LocalizedKey: String, StringCaseListable {
     wallet_send_confirmation_recipient_header,
     wallet_send_confirmation_success_message,
     wallet_send_confirmation_total_title,
+    wallet_title_format,
     wallet_to_label,
     wallet_token_balance_format,
     wallet_token_balance_format_with_fiat,
@@ -1101,6 +1102,9 @@ struct Localized {
     
     /// `en`: "Total"
     static let wallet_send_confirmation_total_title = LocalizedKey.wallet_send_confirmation_total_title.currentValue
+    
+    /// `en`: "Wallet %@"
+    static let wallet_title_format = LocalizedKey.wallet_title_format.currentValue
     
     /// `en`: "TO"
     static let wallet_to_label = LocalizedKey.wallet_to_label.currentValue

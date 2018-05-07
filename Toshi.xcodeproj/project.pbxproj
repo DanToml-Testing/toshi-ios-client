@@ -194,6 +194,9 @@
 		2B69E6A2202BCC3600E84570 /* CollectibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69E6A1202BCC3600E84570 /* CollectibleViewController.swift */; };
 		2B69E6A3202BCC3600E84570 /* CollectibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69E6A1202BCC3600E84570 /* CollectibleViewController.swift */; };
 		2B69E6A4202BCC3600E84570 /* CollectibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69E6A1202BCC3600E84570 /* CollectibleViewController.swift */; };
+		2B6BB7A1209FE0EB00AD02B5 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BB7A0209FE0EB00AD02B5 /* Wallet.swift */; };
+		2B6BB7A2209FE0EB00AD02B5 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BB7A0209FE0EB00AD02B5 /* Wallet.swift */; };
+		2B6BB7A3209FE0EB00AD02B5 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BB7A0209FE0EB00AD02B5 /* Wallet.swift */; };
 		2B6BFFEF20483DA20083F960 /* DappsTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BFFEE20483DA20083F960 /* DappsTableHeaderView.swift */; };
 		2B6BFFF020483DA20083F960 /* DappsTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BFFEE20483DA20083F960 /* DappsTableHeaderView.swift */; };
 		2B6BFFF120483DA20083F960 /* DappsTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BFFEE20483DA20083F960 /* DappsTableHeaderView.swift */; };
@@ -1320,6 +1323,7 @@
 		2B630C1620249E6D00BF0736 /* AvatarTitleSubtitleCheckboxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarTitleSubtitleCheckboxCell.swift; sourceTree = "<group>"; };
 		2B69E69D202BAA6400E84570 /* CollectibleToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleToken.swift; sourceTree = "<group>"; };
 		2B69E6A1202BCC3600E84570 /* CollectibleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectibleViewController.swift; sourceTree = "<group>"; };
+		2B6BB7A0209FE0EB00AD02B5 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		2B6BFFEE20483DA20083F960 /* DappsTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DappsTableHeaderView.swift; sourceTree = "<group>"; };
 		2B6C18F31FCD431800DE432B /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		2B6C18F71FCD438000DE432B /* NewGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupViewModel.swift; sourceTree = "<group>"; };
@@ -2200,6 +2204,7 @@
 			isa = PBXGroup;
 			children = (
 				3381E9E8208F479F00FACFFF /* TransactionSkeleton.swift */,
+				2B6BB7A0209FE0EB00AD02B5 /* Wallet.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -4117,6 +4122,7 @@
 				D197B86C1B96EB2B5778EB52 /* PaymentAddressInputView.swift in Sources */,
 				D197BA8AAC5425D906767D63 /* ReceiptView.swift in Sources */,
 				2B4133C720629DC800490838 /* MessageFetcherJob.swift in Sources */,
+				2B6BB7A3209FE0EB00AD02B5 /* Wallet.swift in Sources */,
 				D197BB101DFDC98E98C6B79E /* ReceiptLineView.swift in Sources */,
 				D197B4900630D4EB555BA7BC /* CGFloat+Additions.swift in Sources */,
 				D197B590332E9C0D001FFDA8 /* AvatarTitleSubtitleDescriptionCell.swift in Sources */,
@@ -4435,6 +4441,7 @@
 				D197B1D03E10A442C0C921FC /* PaymentAddressInputView.swift in Sources */,
 				D197B1871B41C8874AA3E988 /* ReceiptView.swift in Sources */,
 				2B4133C520629DC800490838 /* MessageFetcherJob.swift in Sources */,
+				2B6BB7A1209FE0EB00AD02B5 /* Wallet.swift in Sources */,
 				D197BA1FF0BF6C862DE5FA1C /* ReceiptLineView.swift in Sources */,
 				D197B75D832DE95150C18016 /* CGFloat+Additions.swift in Sources */,
 				D197B582F2C455C9183EBB46 /* AvatarTitleSubtitleDescriptionCell.swift in Sources */,
@@ -4737,6 +4744,7 @@
 				D197B100A8B91065F3AECD37 /* PaymentAddressInputView.swift in Sources */,
 				D197BEFA555DB5B324AA8216 /* ReceiptView.swift in Sources */,
 				2B4133C620629DC800490838 /* MessageFetcherJob.swift in Sources */,
+				2B6BB7A2209FE0EB00AD02B5 /* Wallet.swift in Sources */,
 				D197B79EB8798DAA0647C3D7 /* ReceiptLineView.swift in Sources */,
 				D197B0665A1116F4115B0919 /* CGFloat+Additions.swift in Sources */,
 				D197BE6B912D6D35E6A75E21 /* AvatarTitleSubtitleDescriptionCell.swift in Sources */,

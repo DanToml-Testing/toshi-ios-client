@@ -256,8 +256,7 @@ extension SettingsController: UITableViewDataSource {
 
         switch item {
         case .wallet:
-            //TODO: Implement real selected wallet cell name
-            walletCellConfigurator.configureCell(cell, withTitle: Localized.settings_cell_wallet, value: "Wallet 1")
+            walletCellConfigurator.configureCell(cell, withTitle: Localized.settings_cell_wallet, value: Wallet.activeWallet.title)
         case .network:
             walletCellConfigurator.configureCell(cell, withTitle: Localized.settings_cell_network, value: NetworkSwitcher.shared.activeNetwork.label)
         default:
