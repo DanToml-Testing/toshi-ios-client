@@ -440,7 +440,8 @@ final class EthereumAPIClient {
         let address = cereal.address
         let path = "/v1/apn/deregister"
 
-        let params = ["registration_id": appDelegate.token, "address": cereal.paymentAddress]
+        // No need to specify addressed here, as we want to deregister all of them
+        let params = ["registration_id": appDelegate.token]
 
         guard let data = try? JSONSerialization.data(withJSONObject: params, options: []), let payloadString = String(data: data, encoding: .utf8) else {
             completion(false, "Invalid payload, request could not be executed")
@@ -458,19 +459,19 @@ final class EthereumAPIClient {
 
         let json = RequestParameter(params)
 
-            teapot.post(path, parameters: json, headerFields: headerFields) { result in
-                switch result {
-                case .success(let json, let response):
-                    DLog("\n --- DE-registered from :\(teapot.baseURL)")
-                    DispatchQueue.main.async {
-                        completion(true, "json:\(json?.dictionary ?? [String: Any]()), response: \(response)")
-                    }
-                case .failure(let json, let response, let error):
-                    DLog("\(error)")
-                    DispatchQueue.main.async {
-                        completion(false, "json:\(json?.dictionary ?? [String: Any]()), response: \(response), error: \(error)")
-                    }
+        teapot.post(path, parameters: json, headerFields: headerFields) { result in
+            switch result {
+            case .success(let json, let response):
+                DLog("\n --- DE-registered from :\(teapot.baseURL)")
+                DispatchQueue.main.async {
+                    completion(true, "json:\(json?.dictionary ?? [String: Any]()), response: \(response)")
+                }
+            case .failure(let json, let response, let error):
+                DLog("\(error)")
+                DispatchQueue.main.async {
+                    completion(false, "json:\(json?.dictionary ?? [String: Any]()), response: \(response), error: \(error)")
                 }
             }
+        }
     }
 }
