@@ -19,7 +19,7 @@ final class WalletPickerCellConfigurator: CellConfigurator {
     func configureCell(_ cell: WalletPickerCell, withWallet wallet: Wallet) {
         cell.titleTextField.text = wallet.title
         cell.valueLabel.text = wallet.address
-        cell.leftImageView.image = ImageAsset.avatar_placeholder
+        cell.leftImageView.image = wallet.identiconOrPlaceholder
 
         cell.valueLabel.lineBreakMode = .byTruncatingMiddle
     }

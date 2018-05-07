@@ -16,17 +16,33 @@
 import Foundation
 import EtherealCereal
 import HDWallet
+import Haneke
+import BlockiesSwift
 
 struct Wallet {
 
-    static let walletsNumber: UInt32 = 10
+    static private let walletsNumber: UInt32 = 10
     static var activeWalletPath: UInt32 {
         guard let storedActiveWalletPath = UserDefaultsWrapper.activeWalletPath else { return 0 }
 
         return UInt32(storedActiveWalletPath)
     }
 
+    private static let identiconsCache = Shared.imageCache
+
     static private(set) var items = [Wallet]()
+
+    static var activeWallet: Wallet {
+        return items.first(where: { $0.path == activeWalletPath }) ?? Wallet.items.first!
+    }
+
+    static private var identiconGenerationQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = Int(walletsNumber)
+        queue.name = "Identicons queue"
+
+        return queue
+    }()
 
     private let mnemonic: BTCMnemonic
 
@@ -39,6 +55,20 @@ struct Wallet {
 
     var address: String {
         return cereal.address
+    }
+
+    var generatedAndCachedIdenticon: UIImage? {
+        var image: UIImage?
+
+        Wallet.identiconsCache.fetch(key: address).onSuccess { cachedImage in
+            image = cachedImage
+        }
+
+        return image
+    }
+
+    var identiconOrPlaceholder: UIImage {
+        return generatedAndCachedIdenticon ?? ImageAsset.avatar_placeholder
     }
 
     var isActive: Bool {
@@ -59,13 +89,26 @@ struct Wallet {
     }
 
     static func generate(mnemonic: BTCMnemonic) {
-        for walletPath in 0...Wallet.walletsNumber - 1 {
-            items.append(Wallet(path: walletPath, mnemonic: mnemonic))
-        }
-    }
 
-    static var activeWallet: Wallet {
-        return items.first(where: { $0.path == activeWalletPath }) ?? Wallet.items.first!
+        var generatedWalletItems = [Wallet]()
+
+        for walletPath in 0...Wallet.walletsNumber - 1 {
+            let wallet = Wallet(path: walletPath, mnemonic: mnemonic)
+            generatedWalletItems.append(wallet)
+
+            let operation = BlockOperation()
+            operation.addExecutionBlock {
+
+                let blockies = Blockies(seed: wallet.address)
+                if let identicon = blockies.createImage() {
+                    Wallet.identiconsCache.set(value: identicon, key: wallet.address)
+                }
+            }
+
+            identiconGenerationQueue.addOperation(operation)
+        }
+
+        items = generatedWalletItems
     }
 
     private static func walletKeychain(from mnemonic: BTCMnemonic, lastPath: UInt32) -> BTCKeychain {
